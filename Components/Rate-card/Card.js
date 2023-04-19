@@ -1,18 +1,21 @@
 import { View, Text, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-ws = new WebSocket(
-    'ws://stream.binance.com:9443/ws/btcusdt@trade'
-);
 
 export default function Card() {
+  const ws = new WebSocket(
+      'ws://stream.binance.com:9443/ws/btcusdt@trade'
+  );
 
     const [price, setPrice] = useState(0);
 
     useEffect(() => {
         
         ws.onmessage = (event) => {
-          const { p } = JSON.parse(event.data);
+          
+          console.log("hlooo");
+
+          const p = JSON.parse(event.data);
           setPrice(p);
           console.log(p);
         };
@@ -34,6 +37,7 @@ export default function Card() {
     <View style={{ flexDirection: 'column', marginLeft: 10 }}>
       <Text>BTC - INR</Text>
       <Text>New Delhi, India</Text>
+      
     </View>
     <View style={{ flexDirection: 'column', flex: 1 }}>
     <Text style={{ fontSize: 22, color: 'green', textAlign: 'right' }}>{price}</Text>
