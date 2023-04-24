@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Android-Rate_Tracker",
-    "slug": "Android-Rate_Tracker",
+    "name": "Global-Info",
+    "slug": "Global-Info",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kartikya27.GlobalInfo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cf8395e7-93af-42e9-b317-7f5bf95486e4"
+      }
     }
   }
 }

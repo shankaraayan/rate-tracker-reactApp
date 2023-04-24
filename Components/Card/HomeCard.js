@@ -1,13 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/core'
 
 const HomeCard = ({ title,image,icon }) => {
+  const navigation = useNavigation();
     return (
       <View style={styles.card}>
           <Image style={styles.image} source={{ uri: image }} />
+              <TouchableOpacity
+              onPress={()=> navigation.navigate(title)}
+              >
             <Text style={styles.title}>{title}</Text>
-            
-            {/* <Image style={styles.icon} source={{ uri: icon }} /> */}
+            </TouchableOpacity>
       </View>
     );
   };
@@ -31,7 +35,6 @@ const styles = StyleSheet.create({
       },
       title: {
         fontSize: 16,
-        // fontWeight: 'bold',
       },
 
       image: {

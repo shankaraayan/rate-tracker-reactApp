@@ -3,25 +3,6 @@ import React, { useEffect, useState } from 'react'
 
 
 export default function Card() {
-  const ws = new WebSocket(
-      'ws://stream.binance.com:9443/ws/btcusdt@trade'
-  );
-
-    const [price, setPrice] = useState(0);
-
-    useEffect(() => {
-        
-        ws.onmessage = (event) => {
-          
-          console.log("hlooo");
-
-          const p = JSON.parse(event.data);
-          setPrice(p);
-          console.log(p);
-        };
-      
-    }, []);
-
 
 
   return (
@@ -40,7 +21,7 @@ export default function Card() {
       
     </View>
     <View style={{ flexDirection: 'column', flex: 1 }}>
-    <Text style={{ fontSize: 22, color: 'green', textAlign: 'right' }}>{price}</Text>
+    <Text style={{ fontSize: 22, color: 'green', textAlign: 'right' }}>100</Text>
     </View>
   </View>
 
